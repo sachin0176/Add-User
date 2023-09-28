@@ -1,0 +1,20 @@
+.user{
+    display: block;
+    text-align: left;
+    width: 95%;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    padding: .5rem;
+
+}
+
+.user label{
+    display: inline;
+    background-color: transparent;
+    text-align: center;
+    color: black;
+    font-size: 1rem;
+    margin-right: 1rem;
+    
+
+}

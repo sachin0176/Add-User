@@ -1,24 +1,38 @@
-import logo from './logo.svg';
-import './App.css';
+import  { useState } from "react";
+import "./App.css";
+import Card from "./components/UI/card/Card";
+import AddUser from "./components/AddUser/AddUser";
+import UserList from "./components/UserList/UserList";
+
 
 function App() {
+  const [userData, setUserData] = useState([]);
+  
+
+  const addUserHandler = (username, age) => {
+
+    const userInput= {
+      username: username,
+      age: age,
+    };
+    setUserData((prevUser) => {
+      return [...prevUser, userInput];
+    });
+   
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <AddUser onAddUser={addUserHandler} />
+      {userData.length > 0 && (
+        <Card>
+          {userData.map((user) => (
+            <UserList name={user['username']} age={user["age"]} />
+          ))}
+        </Card>
+      )}
+     
+    </>
   );
 }
 

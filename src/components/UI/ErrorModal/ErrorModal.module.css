@@ -1,0 +1,55 @@
+.backdrop{
+    position: fixed;
+    left: 0;
+    top:0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+    
+}
+
+.modal{
+    position: fixed;
+    top: 30vh;
+    left: 10%;
+    width: 80%;
+    z-index: 100;
+    overflow: hidden;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+.header{
+    background: #4f005f;
+    padding: 1rem;
+}
+.header h2{
+    margin: 0;
+  color: white;
+}
+
+.content{
+   padding-left: 1rem;
+    padding-top: 0rem;
+}
+.content p{
+   
+    color: black;
+}
+
+.action{
+    padding: 1rem;
+  display: flex;
+  justify-content: flex-end;
+}
+
+@media (min-width: 768px) {
+  .modal {
+    left: calc(50% - 20rem);
+    width: 40rem;
+  }
+}
